@@ -1,0 +1,1296 @@
+<!--
+  VANATA Co.,Ltd - Works Page
+  Author: Nguyễn Lực
+  Created: January 28, 2026
+  © 2026 VANATA Co.,Ltd
+-->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="author" content="Nguyễn Lực">
+  <meta name="copyright" content="© 2026 VANATA Co.,Ltd">
+  <title>Works | VANATA</title>
+  <link rel="icon" href="./assets/imgs/logo/vanata_logo.png" type="image/png">
+  <link rel="stylesheet" href="./assets/css/styles.css?v=1.1">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=straight" />
+  <style>
+    body {
+      font-family: adobe-garamond-pro, source-han-serif-japanese, "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", 游明朝体, YuMincho, "Yu Mincho", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+      margin: 0;
+      background: #f7f8fa;
+      color: #222;
+    }
+    .works-main {
+      background: #f7f8fa;
+      min-height: 100vh;
+      font-family: adobe-garamond-pro, source-han-serif-japanese, "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", 游明朝体, YuMincho, "Yu Mincho", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+      color: #181d2c;
+    }
+    .works-intro {
+      /* padding: 48px 0 0 0; */
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .works-intro__header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 0;
+    }
+    .works-intro__title {
+      font-size: 2.2rem;
+      font-weight: 550;
+      color: #203762;
+      margin-bottom: 0;
+      display: inline-block;
+      padding-bottom: 0;
+      position: relative;
+    }
+    .works-intro__title::after {
+      content: "";
+      display: block;
+      width: 108%;
+      height: 6px;
+      border-radius: 3px;
+      background: linear-gradient(to right, #203762 0%, rgba(32, 55, 98, .3) 70%, transparent 100%);
+    }
+    .works-intro__desc {
+      font-size: 1.13rem;
+      color: #232b3a;
+      line-height: 1.8;
+      max-width: 900px;
+      margin: 22px 0 0 0;
+      text-align: left;
+      font-family: adobe-garamond-pro, source-han-serif-japanese, "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", 游明朝体, YuMincho, "Yu Mincho", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+    }
+    .works-intro__process {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      width: 100%;
+      gap: 0;
+      margin: 32px 0 18px 0;
+      background: url('images/works_background.png') center/cover no-repeat;
+      padding: 24px 40px 24px 40px;
+      border-radius: 18px;
+      box-shadow: 0 2px 24px rgba(60,80,120,0.10);
+      position: relative;
+      overflow-x: hidden;
+    }
+    .works-process__step {
+      flex: 1 1 0;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .works-process__img {
+      width: 100%;
+      max-width: 200px;
+      height: 110px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 16px;
+      opacity: 1;
+      margin-bottom: 0;
+      border: 2.5px solid #fff;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 0 6px rgba(255,255,255,0.85), 0 2px 12px rgba(60,80,120,0.10);
+      background-blend-mode: lighten;
+      transition: filter 0.2s;
+    }
+    .works-process__label {
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: #0c4793;
+      background: transparent;
+      border-radius: 0;
+      padding: 0;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: none;
+      letter-spacing: 2px;
+      z-index: 2;
+      border: none;
+      text-align: center;
+      white-space: nowrap;
+      min-width: 0;
+      opacity: 1;
+      text-shadow: 0 2px 8px #2a3c5c44, 0 0 2px #fff;
+      font-family: adobe-garamond-pro, source-han-serif-japanese, "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", 游明朝体, YuMincho, "Yu Mincho", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+    }
+    .works-process__arrow {
+      font-size: 2.8rem;
+      color: #4e7bbf;
+      margin: 0 18px 0 18px;
+      font-weight: 700;
+      align-self: center;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .works-intro__tabs {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      justify-content: left;
+      align-items: center;
+      margin: 38px 0 0 0;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 2px;
+    }
+    .works-tab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 120px;
+      padding: 6px 8px;
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #fff;
+      background: gray;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: background 0.18s, box-shadow 0.18s, color 0.18s, border 0.18s;
+      outline: none;
+      box-shadow: none;
+      position: relative;
+      user-select: none;
+    }
+    .works-tab--active {
+      background: #203762;
+      color: #fff;
+      border-radius: 10px;
+      box-shadow: none;
+      border: none;
+      z-index: 2;
+      border-bottom: burlywood 5px solid;
+    }
+    .works-tab:hover:not(.works-tab--active):not([aria-disabled="true"]) {
+      background: #4973bd;
+    }
+    .works-list {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 0 48px 0;
+    }
+    .works-list__grid {
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+      justify-content: left;
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+    .works-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(60,80,80,0.07);
+      padding: 0 0 18px 0;
+      flex: 1 1 378px;
+      max-width: 378px;
+      min-width: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: box-shadow 0.2s;
+      overflow: hidden;
+      align-items: center;
+    }
+    .works-card__img {
+      width: 100%;
+      height: 269px;
+      object-fit: cover;
+      border-radius: 18px 18px 0 0;
+      margin-bottom: 0;
+    }
+    .works-card__title {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #181d2c;
+      margin: 18px 0 6px 0;
+      letter-spacing: 1px;
+    }
+    .works-card__desc {
+      font-size: 1.02rem;
+      color: #222;
+      margin: 0 18px 0 18px;
+      line-height: 1.6;
+    }
+    .works-list__accordion {
+      width: 100%;
+      max-width: 900px;
+      /*margin: 0 auto;*/
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    /*.accordion-item {
+      border-bottom: 2px solid #e0e0e0;
+    }*/
+    .accordion-header {
+      width: 100%;
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 1.13rem;
+      font-weight: 600;
+      text-align: left;
+      padding: 18px 0 12px 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #232b3a;
+      transition: color 0.2s;
+    }
+    .accordion-header.active {
+      color: #2a3c5c;
+    }
+    .accordion-icon {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-left: 8px;
+      transition: transform 0.2s;
+    }
+    .accordion-content {
+      display: none;
+      padding: 0 0 18px 0;
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.7;
+      animation: fadeIn 0.2s;
+    }
+    .accordion-content.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @media (max-width: 900px) {
+      .works-intro__header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .works-intro__desc {
+        text-align: left;
+        max-width: 100%;
+        margin: 18px 0 0 0;
+      }
+      .works-intro__process {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px 0;
+      }
+      .works-process__img {
+        width: 100vw;
+        max-width: 320px;
+        height: 80px;
+      }
+      .works-list__grid {
+        flex-direction: column;
+        gap: 18px;
+      }
+      .works-card {
+        max-width: 100%;
+        min-width: 0;
+      }
+      .works-process__label {
+        position: static;
+        transform: none;
+        margin: 8px 0 0 0;
+        padding: 6px 18px;
+        font-size: 1.08rem;
+      }
+    }
+    .main-nav a {
+      color: #ffffff;
+    }
+  </style>
+</head>
+<script>
+  // Auto-select 教育 tab if URL has #edu
+  window.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.works-tab');
+    const grids = [
+      document.querySelector('.works-list__grid--cad'),
+      document.querySelector('.works-list__grid--bim'),
+      document.querySelector('.works-list__grid--cg'),
+      document.querySelector('.works-list__accordion--jisseki'),
+    ];
+    function showTab(idx) {
+      tabs.forEach(tab => tab.classList.remove('works-tab--active'));
+      tabs[idx].classList.add('works-tab--active');
+      grids.forEach((g, i) => {
+        if (!g) return;
+        if (i === idx) {
+          g.style.display = g.classList.contains('works-list__accordion--jisseki') ? 'flex' : 'flex';
+        } else {
+          g.style.display = 'none';
+        }
+      });
+    }
+    if (window.location.hash === '#cad') {
+      showTab(0);
+    } else if (window.location.hash === '#bim') {
+      showTab(1);
+    } else if (window.location.hash === '#cg') {
+      showTab(2);
+    }
+  });
+</script>
+<body>
+  <!-- Header copied from index.html -->
+  <header class="site-header" role="banner">
+    <div class="branding">
+      <a class="logo" href="./" aria-label="VANATA homepage">
+        <img class="logo__img" src="./assets/imgs/logo/vanata_logo.png" alt="VANATA logo" />
+      </a>
+    </div>
+    <div class="nav-wrap">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Open menu">☰</button>
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li><a href="./?cate=company">Company</a></li>
+          <li><a href="./?cate=works">Works</a></li>
+          <li><a href="./?cate=training">Training</a></li>
+          <li><a href="./?cate=cost">Cost</a></li>
+          <li><a href="./?cate=contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- Banner -->
+  <section class="page-banner">
+  <div class="page-banner__inner">
+    <h1 class="page-banner__title">仕事内容</h1>
+    <p class="page-banner__sub">WORKS</p>
+  </div>
+</section>
+<style>
+    .page-banner{
+      /* Ảnh banner */
+      background-image:
+        linear-gradient(0deg, rgba(0,0,0,.35), rgba(0,0,0,.35)),
+        url("http://vanata.co.jp.testrs.jp/demo_php/assets/imgs/works/works_banner.png");
+
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      /* ✅ luôn thấy toàn bộ ảnh (không crop) */
+      background-size: contain;
+
+      /* chiều cao banner linh hoạt theo màn hình */
+      min-height: clamp(120px, 18vw, 220px);
+
+      /* nền phía sau (khi ảnh không phủ kín do contain) */
+      background-color: #ffffff;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .page-banner__inner{
+      width: min(1100px, 92%);
+      margin-left: 5rem;
+      margin-top: 4.2rem;
+      padding: clamp(14px, 2.5vw, 28px) 0;
+    }
+
+    .page-banner__sub{
+      margin: 0 0 6px;
+      color: rgba(255,255,255,.75);
+      font-weight: 700;
+      letter-spacing: .18em;
+      font-size: 12px;
+    }
+
+    .page-banner__title{
+      margin: 0;
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: .04em;
+      font-size: clamp(26px, 3.2vw, 44px);
+    }
+  </style>
+  
+  <main class="works-main">
+    <section class="works-intro">
+      <div class="works-intro__header">
+        <h1 class="works-intro__title">サービスについて</h1>
+        <div class="works-intro__desc">
+          VANATAは、建築CAD図面制作およびBIMモデリングに特化した <br>
+          建築デジタル制作サービスを提供しています。 <br>
+          日本の建築基準・設計実務・施工図ルールを理解し、 <br>
+          各取引先の作図標準・図面表記ルール・BIMテンプレートを遵守した <br>
+          実務対応力の高い成果物を作成します。
+        </div>
+      </div>
+      <div class="works-intro__process">
+        <div class="works-process__step">
+          <div class="works-process__img" style="background-image:url('./assets/imgs/works/toresu.jpg')"></div>
+          <div class="works-process__label">計画図</div>
+        </div>
+        <div class="works-process__arrow">→</div>
+        <div class="works-process__step">
+          <div class="works-process__img" style="background-image:url('./assets/imgs/works/basic_figure.jpg')"></div>
+          <div class="works-process__label">基本図</div>
+        </div>
+        <div class="works-process__arrow">→</div>
+        <div class="works-process__step">
+          <div class="works-process__img" style="background-image:url('./assets/imgs/works/implement_digram.jpg')"></div>
+          <div class="works-process__label">実施図</div>
+        </div>
+        <div class="works-process__arrow">→</div>
+        <div class="works-process__step">
+          <div class="works-process__img" style="background-image:url('./assets/imgs/works/working_drawing.jpg')"></div>
+          <div class="works-process__label">施工図</div>
+        </div>
+        <div class="works-process__arrow">→</div>
+        <div class="works-process__step">
+          <div class="works-process__img" style="background-image:url('./assets/imgs/works/completed_draw.png')"></div>
+          <div class="works-process__label">完成図書</div>
+        </div>
+      </div>
+      <!-- 作図標準・プロジェクト対応 block (moved above tabs) -->
+      <section class="works-intro">
+        <div class="works-intro__header">
+          <h1 class="works-intro__title">作図標準・プロジェクト対応</h1>
+        </div>
+        <div class="works-intro__desc" style="max-width:900px;">
+          <ul style="margin:0 0 0 1.2em;padding:0;list-style:disc;text-align:left;">
+            <li>各取引先の作図標準・図面ルールの遵守</li>
+            <li>指定テンプレート・レイヤ構成対応</li>
+            <li>図面チェックリスト運用</li>
+            <li>修正履歴管理による品質保証</li>
+            <li>必要に応じてお客様オフィスでの常駐対応にも柔軟に対応しています。</li>
+          </ul>
+        </div>
+      </section>
+      <section class="works-intro">
+        <div class="works-intro__header">
+          <h1 class="works-intro__title">制作フロー</h1>
+        </div>
+        <div class="flow-grid">
+          <div class="flow-item i1">
+            <div class="flow-channel">Mail ✉ / Data ☁</div>
+            <div class="flow-card">
+              <div class="flow-step">
+                <span class="step-no">01</span>
+                <span class="step-text">資料・作図標準のご共有</span>
+              </div>
+            </div>
+            <div class="flow-note">セキュリティ保護</div>
+          </div>
+          <div class="flow-arrow a1" aria-hidden="true">
+            <span style='font-size:35px;'>&#8646;</span>
+          </div>
+          <div class="flow-item i2">
+            <div class="flow-channel">Teams 🎥 / Meet 👥</div>
+            <div class="flow-card">
+              <div class="flow-step">
+                <span class="step-no">02</span>
+                <span class="step-text">内容確認・ヒアリング</span>
+              </div>
+            </div>
+            <div class="flow-note">日本の担当者</div>
+          </div>
+          <div class="flow-arrow down a2" aria-hidden="true">
+                <span style='font-size:35px;'>&#8595;</span>
+          </div>
+          <div class="flow-item i3">
+            <div class="flow-card">
+              <div class="flow-step">
+                <span class="step-no">03</span>
+                <span class="step-text">作業開始</span>
+              </div>
+            </div>
+            <div class="flow-note">日本とベトナム</div>
+          </div>
+          <div class="flow-arrow a3" aria-hidden="true">
+            <span style='font-size:35px;'>&#8646;</span>
+          </div>
+          <div class="flow-item i4">
+            <div class="flow-card wide">
+              <div class="flow-step">
+                <span class="step-no">04</span>
+                <span class="step-text">社内チェック・データ共有</span>
+              </div>
+            </div>
+            <div class="flow-note">質疑・提案</div>
+          </div>
+          <div class="flow-arrow up a4" aria-hidden="true">
+            <span style='font-size:35px;'>&#8593;</span>
+          </div>
+          <div class="flow-item i5">
+            <div class="flow-card">
+              <div class="flow-step">
+                <span class="step-no">05</span>
+                <span class="step-text">修正</span>
+              </div>
+            </div>
+          </div>
+          <div class="flow-arrow a5" aria-hidden="true">
+            <span style='font-size:35px;'>&#8594;</span>
+          </div>
+          <div class="flow-item i6">
+            <div class="flow-channel"></div>
+            <div class="flow-card">
+              <div class="flow-step">
+                <span class="step-no">06</span>
+                <span class="step-text">納品・提出</span>
+              </div>
+            </div>
+            <div class="flow-note">現場・図面</div>
+          </div>
+        </div>
+      </section>
+      <!--  -->
+      <section class="works-intro">
+        <div class="works-intro__header">
+          <h1 class="works-intro__title">対応体制</h1>
+        </div>
+        <div class="works-intro__desc" style="max-width:900px;">
+          <ul style="margin:0 0 0 1.2em;padding:0;list-style:disc;text-align:left;">
+             <li>日本語対応スタッフ常駐</li>
+             <li>ダブルチェックによる品質管理</li>
+             <li>短納期・柔軟な修正対応</li>
+          </ul>
+        </div>
+      </section>
+      <div class="works-intro__tabs">
+        <div class="works-tab works-tab--active">CAD図面制作</div>
+        <div class="works-tab">BIMモデリング</div>
+        <div class="works-tab">CGパース作成</div>
+        <!-- <div class="works-tab">作図標準・プロジェクト対応</div>
+        <div class="works-tab">制作フロー</div>
+        <div class="works-tab">対応体制</div> -->
+        <div class="works-tab">実績</div>
+        <!-- <div class="works-tab">教育</div> -->
+      </div>
+    </section>
+    <section class="works-list">
+                        <div class="works-list__project works-list__project--flow" style="display:none">
+                          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                          <section class="flow-wrap">
+                            <div class="flow-grid">
+                              <div class="flow-item i1">
+                                <div class="flow-channel">Mail ✉ / Data ☁</div>
+                                <div class="flow-card">
+                                  <div class="flow-step">
+                                    <span class="step-no">01</span>
+                                    <span class="step-text">資料・作図標準のご共有</span>
+                                  </div>
+                                </div>
+                                <div class="flow-note">セキュリティ保護</div>
+                              </div>
+                              <div class="flow-arrow a1" aria-hidden="true">
+                                <span style='font-size:35px;'>&#8646;</span>
+                              </div>
+                              <div class="flow-item i2">
+                                <div class="flow-channel">Teams 🎥 / Meet 👥</div>
+                                <div class="flow-card">
+                                  <div class="flow-step">
+                                    <span class="step-no">02</span>
+                                    <span class="step-text">内容確認・ヒアリング</span>
+                                  </div>
+                                </div>
+                                <div class="flow-note">日本の担当者</div>
+                              </div>
+                              <div class="flow-arrow down a2" aria-hidden="true">
+                                   <span style='font-size:35px;'>&#8595;</span>
+                              </div>
+                              <div class="flow-item i3">
+                                <div class="flow-card">
+                                  <div class="flow-step">
+                                    <span class="step-no">03</span>
+                                    <span class="step-text">作業開始</span>
+                                  </div>
+                                </div>
+                                <div class="flow-note">日本とベトナム</div>
+                              </div>
+                              <div class="flow-arrow a3" aria-hidden="true">
+                                <span style='font-size:35px;'>&#8646;</span>
+                              </div>
+                              <div class="flow-item i4">
+                                <div class="flow-card wide">
+                                  <div class="flow-step">
+                                    <span class="step-no">04</span>
+                                    <span class="step-text">社内チェック・データ共有</span>
+                                  </div>
+                                </div>
+                                <div class="flow-note">質疑・提案</div>
+                              </div>
+                              <div class="flow-arrow up a4" aria-hidden="true">
+                                <span style='font-size:35px;'>&#8593;</span>
+                              </div>
+                              <div class="flow-item i5">
+                                <div class="flow-card">
+                                  <div class="flow-step">
+                                    <span class="step-no">05</span>
+                                    <span class="step-text">修正</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="flow-arrow a5" aria-hidden="true">
+                                <span style='font-size:35px;'>&#8594;</span>
+                              </div>
+                              <div class="flow-item i6">
+                                <div class="flow-channel"></div>
+                                <div class="flow-card">
+                                  <div class="flow-step">
+                                    <span class="step-no">06</span>
+                                    <span class="step-text">納品・提出</span>
+                                  </div>
+                                </div>
+                                <div class="flow-note">現場・図面</div>
+                              </div>
+                            </div>
+                          </section>
+                          <style>
+                            :root{
+                            --brand:#203762;
+                            --brand-2:#2d4a86;
+                            --ink:#101828;
+                            --muted:#667085;
+                            --line:#e6eaf2;
+                            --bg:#ffffff;
+                            --card:#ffffff;
+                          }
+                          .flow-wrap{
+                            max-width: 1080px;
+                            margin: 0 auto;
+                            padding: 28px 18px 42px;
+                            background: var(--bg);
+                            border-radius: 15px;
+                          }
+                          .flow-grid{
+                            display: grid;
+                            grid-template-columns: 1fr 56px 1fr 56px 1.05fr 56px 1fr;
+                            grid-template-rows: auto 60px auto;
+                            gap: 16px 10px;
+                            align-items: center;
+                            padding-top: 10px;
+                          }
+                          .i1{ grid-column: 1; grid-row: 1; }
+                          .a1{ grid-column: 2; grid-row: 1; }
+                          .i2{ grid-column: 3; grid-row: 1; }
+                          .a2{ grid-column: 3; grid-row: 2; justify-self: center; }
+                          .i3{ grid-column: 3; grid-row: 3; }
+                          .a3{ grid-column: 4; grid-row: 3; margin-bottom: 26px;}
+                          .i4{ grid-column: 5; grid-row: 3; }
+                          .a4{ grid-column: 5; grid-row: 2; justify-self: center; }
+                          .i5{ grid-column: 5; grid-row: 1; }
+                          .a5{ grid-column: 6; grid-row: 1; }
+                          .i6{ grid-column: 7; grid-row: 1; }
+                          .flow-item{ min-width: 0; }
+                          .flow-channel{ font-size: 14px; font-weight: 600; color: var(--brand); margin: 0 0 10px; display: inline-flex; align-items: center; gap: 8px; }
+                          .flow-card{ background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 14px 14px; box-shadow: 0 10px 24px rgba(16,24,40,.08); }
+                          .flow-card.wide{ padding: 16px 16px; }
+                          .flow-step{ display: flex; align-items: center; gap: 12px; }
+                          .step-no{ width: 38px; height: 38px; border-radius: 12px; background: rgba(32,55,98,.10); color: var(--brand); display: grid; place-items: center; font-weight: 800; letter-spacing: .02em; }
+                          .step-text{ color: var(--ink); font-weight: 700; line-height: 1.3; }
+                          .flow-note{ margin-top: 10px; font-size: 14px; color: var(--brand-2); font-weight: 600; }
+                          .flow-arrow{ width: 56px; height: 20px; position: relative; justify-self: stretch; align-self: center; }
+                          .flow-arrow.down{ width: 20px; height: 56px; }
+                          .flow-arrow.down::before{ width: 3px; height: 38px; left: 50%; top: 0; transform: translateX(-50%); }
+                          .flow-arrow.down::after{ right: 50%; top: auto; bottom: 0; transform: translateX(50%); border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 12px solid rgba(32,55,98,.85); border-bottom: 0; }
+                          .flow-arrow.up{ width: 20px; height: 56px; }
+                          .flow-arrow.up::before{ width: 3px; height: 38px; left: 50%; top: auto; bottom: 0; transform: translateX(-50%); }
+                          .flow-arrow.up::after{ right: 50%; top: 0; transform: translateX(50%); border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 12px solid rgba(32,55,98,.85); border-top: 0; }
+                          @media (max-width: 980px){
+                            .flow-grid{ grid-template-columns: 1fr; grid-template-rows: auto; gap: 14px; }
+                            .i1,.i2,.i3,.i4,.i5,.i6, .a1,.a2,.a3,.a4,.a5{ grid-column: 1; grid-row: auto; }
+                            .flow-arrow{ width: 100%; height: 18px; }
+                            .flow-arrow.down,.flow-arrow.up{ width: 100%; height: 18px; }
+                          }
+                          .flow-arrow{ display: grid; place-items: center; width: 56px; height: 24px; color: rgba(32,55,98,.85); }
+                          .flow-arrow span{ font-size: 28px; line-height: 1; transition: transform .2s ease, color .2s ease; }
+                          .flow-arrow.down, .flow-arrow.up{ width: 24px; height: 56px; }
+                          .flow-arrow.down span, .flow-arrow.up span{ font-size: 30px; }
+                          @media (hover:hover){ .flow-arrow span:hover{ transform: scale(1.15); color: var(--brand); } }
+                          @media (max-width: 980px){ .flow-arrow{ width: 100%; height: 20px; } .flow-arrow span{ font-size: 24px; } }
+                          </style>
+                        </div>
+                  <div class="works-list__project works-list__project--support" style="display:none">
+                    <div class="project-info-box" style="width:100%;max-width:900px;margin:0 auto 24px auto;background:#fff;border-radius:18px;box-shadow:0 2px 16px rgba(60,80,80,0.07);padding:32px 24px 24px 24px;">
+                      <ul style="font-size:1.13rem;color:#203762;line-height:2;margin:0 0 0 1.2em;padding:0;list-style:disc;">
+                        <li>日本語対応スタッフ常駐</li>
+                        <li>ダブルチェックによる品質管理</li>
+                        <li>短納期・柔軟な修正対応</li>
+                      </ul>
+                    </div>
+                  </div>
+            <div class="works-list__project works-list__project--standard" style="display:none">
+              <div class="project-info-box" style="width:100%;max-width:900px;margin:0 auto 24px auto;background:#fff;border-radius:18px;box-shadow:0 2px 16px rgba(60,80,80,0.07);padding:32px 24px 24px 24px;">
+                <ul style="font-size:1.13rem;color:#203762;line-height:2;margin:0 0 0 1.2em;padding:0;list-style:disc;">
+                  <li>各取引先の作図標準・図面ルールの遵守</li>
+                  <li>指定テンプレート・レイヤ構成対応</li>
+                  <li>図面チェックリスト運用</li>
+                  <li>修正履歴管理による品質保証</li>
+                </ul>
+              </div>
+            </div>
+      <div class="works-list__grid works-list__grid--cad">
+        <div class="cad-info-box">
+          <div class="cad-info-desc">設計意図を正確に理解し、 <br>
+            意匠・構造・設備に対応した各種建築図面を作成します。</div>
+          <div class="cad-info-label">対応図面例</div>
+          <div class="cad-info-btns">
+            <button class="cad-btn">データ化</button>
+            <button class="cad-btn">基本図</button>
+            <button class="cad-btn">実施図</button>
+            <button class="cad-btn">施工図</button>
+            <button class="cad-btn">竣工図</button>
+          </div>
+          <div class="cad-info-label" style="margin-top:18px;">納品形式</div>
+          <div class="cad-info-formats">
+            <span>DWG <img src="./assets/imgs/icons/DWG_icon.png" alt="DWG" style="height:1.2em;vertical-align:middle;margin-right:4px;"> / DXF <img src="./assets/imgs/icons/DXF_icon.png" alt="DXF" style="height:1.2em;vertical-align:middle;margin-right:4px;"> / PDF <img src="./assets/imgs/icons/PDF_icon.png" alt="PDF" style="height:1.2em;vertical-align:middle;"> </span>
+          </div>
+        </div>
+      </div>
+      <div class="works-list__grid works-list__grid--cad">
+        <div class="works-card">
+          <img src="./assets/imgs/works/cad/vanata_平面図.png" alt="Vanata 平面図" class="works-card__img" />
+          <div class="works-card__title">平面図</div>
+          <!-- <div class="works-card__desc">平面図</div> -->
+        </div>
+        <div class="works-card">
+          <img src="./assets/imgs/works/cad/vanata_立面図.png" alt="Vanata 立面図" class="works-card__img" />
+          <div class="works-card__title">立面図</div>
+          <!-- <div class="works-card__desc">立面図</div> -->
+        </div>
+        <!-- <div class="works-card">
+          <img src="./assets/imgs/works/cad/vanata_断面図.png" alt="Vanata 断面図" class="works-card__img" />
+          <div class="works-card__title">断面図</div>
+          <div class="works-card__desc">断面図</div>
+        </div> -->
+        <div class="works-card">
+          <img src="./assets/imgs/works/cad/vanata_詳細図.png" alt="Vanata 詳細図" class="works-card__img" />
+          <div class="works-card__title">詳細図</div>
+          <!-- <div class="works-card__desc">詳細図</div> -->
+        </div>
+        <!-- <div class="works-card">
+          <img src="./assets/imgs/works/cad/vanata_部品.png" alt="Vanata 部品" class="works-card__img" />
+          <div class="works-card__title">部品</div>
+          <div class="works-card__desc">部品</div>
+        </div> -->
+        <!-- <div class="works-card">
+          <img src="./assets/imgs/works/cad/vanata_展開図.png" alt="Vanata 展開図" class="works-card__img" />
+          <div class="works-card__title">展開図</div>
+          <div class="works-card__desc">展開図</div>
+        </div> -->
+      </div>
+      <div class="works-list__grid works-list__grid--bim" style="display:none">
+                <!-- <div class="cad-info-box" style="width:100%;max-width:1089px;margin:0 auto 24px auto;background:#fff;border-radius:18px;box-shadow:0 2px 16px rgba(60,80,80,0.07);padding:32px 24px 24px 24px;"> -->
+                <div class="cad-info-box" style="width:100%;margin:0 auto 24px auto;background:#fff;border-radius:18px;box-shadow:0 2px 16px rgba(60,80,80,0.07);padding:32px 24px 24px 24px;">
+                  <div style="font-size:1.13rem;color:#203762;line-height:1.8;margin-bottom:18px;">Revit・Rebroを中心に、<br>BIMワークフローに対応した3Dモデルを構築します。</div>
+                  <div class="cad-info-label" style="font-size:1.08rem;font-weight:700;color:#203762;margin-bottom:8px;">対応内容</div>
+                  <div class="cad-info-btns">
+                    <button class="cad-btn">LOD200～LOD400 モデリング</button>
+                    <button class="cad-btn">干渉チェック用モデル作成</button>
+                    <button class="cad-btn">数量算出用モデル</button>
+                    <button class="cad-btn">ファミリ・テンプレート作成</button>
+                    <button class="cad-btn">IFCデータ出力</button>
+                  </div>
+                  <div class="cad-info-label" style="margin-top:18px;">納品形式</div>
+                  <div class="cad-info-formats">
+                    <span>RVT <img src="./assets/imgs/icons/revit_icon.jpg" alt="REVIT" style="height:1.2em;vertical-align:middle;margin-right:4px;">/ PLN<img src="./assets/imgs/icons/PLN_icon.png" alt="PLN" style="height:1.2em;vertical-align:middle;margin-right:4px;"> / IFC<img src="./assets/imgs/icons/IFC_icon.jpg" alt="IFC" style="height:1.2em;vertical-align:middle;margin-right:4px;"> / PDF<img src="./assets/imgs/icons/PDF_icon.png" alt="PDF" style="height:1.2em;vertical-align:middle;margin-right:4px;"></span>
+                  </div>
+                </div>
+        <div class="works-card">
+          <img src="./assets/imgs/works/bim/vanata_autoCad.png" alt="AutoCad" class="works-card__img" />
+          <div class="works-card__title">AutoCad</div>
+          <!-- <div class="works-card__desc">AutoCad</div> -->
+        </div>
+        <div class="works-card">
+          <img src="./assets/imgs/works/bim/vanata_revit.png" alt="Bim Revit" class="works-card__img" />
+          <div class="works-card__title">Bim Revit</div>
+          <!-- <div class="works-card__desc">Bim Revit</div> -->
+        </div>
+        <div class="works-card">
+          <img src="./assets/imgs/works/bim/vanata_rebro.png" alt="Rebro" class="works-card__img" />
+          <div class="works-card__title">Rebro</div>
+          <!-- <div class="works-card__desc">Rebro</div> -->
+        </div>
+        <div class="works-card">
+          <img src="./assets/imgs/works/bim/vanata_sketchUp.png" alt="SketchUP" class="works-card__img" />
+          <div class="works-card__title">SketchUP</div>
+          <!-- <div class="works-card__desc">SketchUP</div> -->
+        </div>
+        <div class="works-card">
+          <img src="./assets/imgs/works/bim/vanata_rhino_grasshoper.jpg" alt="Rhino" class="works-card__img" />
+          <div class="works-card__title">Rhino</div>
+          <!-- <div class="works-card__desc">Rhino</div> -->
+        </div>
+        <!-- <div class="works-card">
+          <img src="./assets/imgs/works/bim/vanata_other.png" alt="Other" class="works-card__img" />
+          <div class="works-card__title">Other</div>
+          <div class="works-card__desc">Other</div>
+        </div> -->
+      </div>
+      <div class="works-list__grid works-list__grid--cg" style="display:none">
+                <!-- <div class="cad-info-box" style="width:100%;max-width:1089px;margin:0 auto 24px auto;background:#fff;border-radius:18px;box-shadow:0 2px 16px rgba(60,80,80,0.07);padding:32px 24px 24px 24px;"> -->
+                <div class="cad-info-box" style="width:100%;margin:0 auto 24px auto;background:#fff;border-radius:18px;box-shadow:0 2px 16px rgba(60,80,80,0.07);padding:32px 24px 24px 24px;">
+                  <div style="font-size:1.13rem;color:#203762;line-height:1.8;margin-bottom:18px;">設計意図や空間イメージを視覚的に分かりやすく伝える <br>
+                    建築CG・パースを制作します。 <br>
+                    BIMモデルやCAD図面を活用し、 <br>
+                    外観・内観・鳥瞰などの高品質なビジュアルを作成し、 <br>
+                    設計提案・プレゼンテーション・販売促進に活用可能な成果物を提供します。</div>
+                  <div class="cad-info-label" style="font-size:1.08rem;font-weight:700;color:#203762;margin-bottom:8px;">対応内容</div>
+                  <div class="cad-info-btns">
+                    <button class="cad-btn">外観パース/内観パース</button>
+                    <button class="cad-btn">鳥瞰パース</button>
+                    <button class="cad-btn">マテリアル・照明設定</button>
+                    <button class="cad-btn">フォトリアルレンダリング</button>
+                    <button class="cad-btn">施工ステップ</button>
+                  </div>
+                  <div class="cad-info-label" style="margin-top:18px;">納品形式</div>
+                  <div class="cad-info-formats">
+                    <span>JPG<img src="./assets/imgs/icons/JPG_icon.png" alt="JPG" style="height:1.2em;vertical-align:middle;margin-right:4px;"> / PNG<img src="./assets/imgs/icons/PNG_icon.png" alt="PNG" style="height:1.2em;vertical-align:middle;margin-right:4px;"> / MP4<img src="./assets/imgs/icons/MP4_icon.png" alt="MP4" style="height:1.2em;vertical-align:middle;margin-right:4px;"> / PDF<img src="./assets/imgs/icons/PDF_icon.png" alt="PDF" style="height:1.2em;vertical-align:middle;margin-right:4px;"></span>
+                  </div>
+                </div>
+        <div class="works-card">
+          <img src="./assets/imgs/works/cg/vanata_CG外観.png" alt="外観" class="works-card__img" />
+          <div class="works-card__title">外観</div>
+          <!-- <div class="works-card__desc">外観</div> -->
+        </div>
+        <div class="works-card">
+          <img src="./assets/imgs/works/cg/vanata_CG内観.png" alt="内観" class="works-card__img" />
+          <div class="works-card__title">内観</div>
+          <!-- <div class="works-card__desc">内観</div> -->
+        </div>
+        <div class="works-card">
+          <img src="./assets/imgs/works/cg/vanata_CG鳥瞰.png" alt="鳥瞰" class="works-card__img" />
+          <div class="works-card__title">鳥瞰</div>
+          <!-- <div class="works-card__desc">鳥瞰</div> -->
+        </div>
+        <!-- <div class="works-card">
+          <img src="./assets/imgs/works/cg/vanata_CGマテリアル.png" alt="マテリアル" class="works-card__img" />
+          <div class="works-card__title">マテリアル</div>
+          <div class="works-card__desc">マテリアル</div>
+        </div>
+        <div class="works-card">
+          <img src="./assets/imgs/works/cg/vanata_CGレンダリング.png" alt="レンダリング" class="works-card__img" />
+          <div class="works-card__title">レンタリング</div>
+          <div class="works-card__desc">レンタリング</div>
+        </div>
+        <div class="works-card">
+          <img src="./assets/imgs/works/cg/vanata_CG施工ステップ.png" alt="施工ステップ" class="works-card__img" />
+          <div class="works-card__title">施工ステップ</div>
+          <div class="works-card__desc">施工ステップ</div>
+        </div> -->
+      </div>
+      <div class="works-list__accordion works-list__accordion--edu" style="display:none">
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">
+            技術教育 <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div>Đào tạo kỹ thuật chuyên sâu cho nhân viên và đối tác.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">
+            Software <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div>Hướng dẫn sử dụng phần mềm thiết kế, mô hình hóa, quản lý dự án.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">
+            日本語教育 <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div>Đào tạo tiếng Nhật cho nhân viên, hỗ trợ giao tiếp và làm việc với đối tác Nhật Bản.</div>
+          </div>
+        </div>
+      </div>
+      <div class="works-list__accordion works-list__accordion--jisseki" style="display:none">
+        <div class="accordion-item">
+          <div style="font-size:1rem;color:#555;">2021年度：5件</div>
+          <!-- <button class="accordion-header" type="button">
+            2023 <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div style="font-size:1rem;color:#555;">2023年度：5つのプロジェクトを実施していました。</div>
+            <div class="works-list__grid works-list__grid--jisseki2023" style="background:#f7f8fa;padding:24px 0 24px 0;border-radius:16px;gap:32px;display:flex;justify-content:flex-start;align-items:stretch;">
+              <div class="works-card" style="align-items: flex-start;">
+                <img src="https://www.vanata.co.jp/wp-content/themes/vanata/assets/img/works/Enscape_2021-07-30-01-15-24.jpg" alt="President Ho Chi Minh Memorial" class="works-card__img" />
+                <div class="works-card__title" style="margin-left: 18px;">President Ho Chi Minh Memorial</div>
+                <div class="works-card__desc">Memorial park with a large reflecting pool in Ho Chi Minh City.</div>
+              </div>
+              <div class="works-card" style="align-items: flex-start;">
+                <img src="https://www.vanata.co.jp/wp-content/themes/vanata/assets/img/works/Enscape_2022-03-19-23-43-04.jpg" alt="Amanoi entry pavilion" class="works-card__img" />
+                <div class="works-card__title" style="margin-left: 18px;">Amanoi entry pavilion</div>
+                <div class="works-card__desc">A serene entry pavilion at the Amanoi resort nestled in the forest.</div>
+              </div>
+              <div class="works-card" style="align-items: flex-start;">
+                <img src="https://www.vanata.co.jp/wp-content/themes/vanata/assets/img/works/Enscape_2022-04-30-11-00-43.png" alt="La Boiserie, Performing Art Center" class="works-card__img" />
+                <div class="works-card__title" style="margin-left: 18px;">La Boiserie, Performing Art Center</div>
+                <div class="works-card__desc">A contemporary performing arts center in France with a striking wooden facade.</div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <div class="accordion-item">
+          <div style="font-size:1rem;color:#555;">2022年度：17件</div>
+          <!-- <button class="accordion-header" type="button">
+            2024 <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div style="font-size:1rem;color:#555;">2024年度：5つのプロジェクトを実施していました。</div>
+            <div class="works-list__grid works-list__grid--jisseki2024" style="background:#f7f8fa;padding:24px 0 24px 0;border-radius:16px;gap:32px;display:flex;justify-content:flex-start;align-items:stretch;">
+              <div class="works-card">
+                <img src="https://www.vanata.co.jp/wp-content/themes/vanata/assets/img/works/Enscape_2022-04-30-12-19-07.png" alt="President Ho Chi Minh Memorial" class="works-card__img" />
+                <div class="works-card__title">President Ho Chi Minh Memorial</div>
+                <div class="works-card__desc">Memorial park with a large reflecting pool in Ho Chi Minh City.</div>
+              </div>
+              <div class="works-card">
+                <img src="https://www.vanata.co.jp/wp-content/themes/vanata/assets/img/works/Enscape_2022-04-30-11-00-43.png" alt="Amanoi entry pavilion" class="works-card__img" />
+                <div class="works-card__title">Amanoi entry pavilion</div>
+                <div class="works-card__desc">A serene entry pavilion at the Amanoi resort nestled in the forest.</div>
+              </div>
+              <div class="works-card">
+                <img src="https://www.vanata.co.jp/wp-content/themes/vanata/assets/img/works/Enscape_2021-07-30-01-15-24.jpg" alt="La Boiserie, Performing Art Center" class="works-card__img" />
+                <div class="works-card__title">La Boiserie, Performing Art Center</div>
+                <div class="works-card__desc">A contemporary performing arts center in France with a striking wooden facade.</div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <div class="accordion-item">
+          <div style="font-size:1rem;color:#555;">2023年度：21件</div>
+          <!-- <button class="accordion-header" type="button">
+            2025 <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div style="font-size:1rem;color:#555;">2025年度：5つのプロジェクトを実施していました。</div>
+            <div class="works-list__grid works-list__grid--jisseki2025" style="background:#f7f8fa;padding:24px 0 24px 0;border-radius:16px;gap:32px;display:flex;justify-content:flex-start;align-items:stretch;">
+              <div class="works-card">
+                <img src="images/hochiminh_memorial.jpg" alt="President Ho Chi Minh Memorial" class="works-card__img" />
+                <div class="works-card__title">President Ho Chi Minh Memorial</div>
+                <div class="works-card__desc">Memorial park with a large reflecting pool in Ho Chi Minh City.</div>
+              </div>
+              <div class="works-card">
+                <img src="images/amanoi_pavilion.jpg" alt="Amanoi entry pavilion" class="works-card__img" />
+                <div class="works-card__title">Amanoi entry pavilion</div>
+                <div class="works-card__desc">A serene entry pavilion at the Amanoi resort nestled in the forest.</div>
+              </div>
+              <div class="works-card">
+                <img src="images/laboiserie.jpg" alt="La Boiserie, Performing Art Center" class="works-card__img" />
+                <div class="works-card__title">La Boiserie, Performing Art Center</div>
+                <div class="works-card__desc">A contemporary performing arts center in France with a striking wooden facade.</div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <div class="accordion-item">
+          <div style="font-size:1rem;color:#555;">2024年度：48件</div>
+        </div>
+        <div class="accordion-item">
+          <div style="font-size:1rem;color:#555;">2025年度：32件</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="footer">
+    <div class="footer2__container">
+      <div class="footer2__col footer2__col--left">
+        <img class="footer2__logo-img" src="./assets/imgs/logo/vanata_logo.png" alt="VANATA logo" />
+        <div class="footer2__logo-text">VANATA</div>
+      </div>
+      <div class="footer2__col footer2__col--right">
+        <ul class="footer2__menu">
+          <li><a href="./">Home</a></li>
+          <li><a href="./?cate=company">Company</a></li>
+          <li><a href="./?cate=works">Works</a></li>
+          <li><a href="./?cate=training">Training</a></li>
+          <li><a href="./?cate=cost">Cost</a></li>
+          <li><a href="./?cate=contact">Contact</a></li>
+        </ul>
+        <div class="footer2__contact">
+          <div>〒559-0013 住之江区御崎5-8-20</div>
+          <div>+81-80-4645-2010</div>
+          <div><a href="mailto:vnthuan001@vanata.co.jp">vnthuan001@vanata.co.jp</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer2__copyright">© 2026 VANATA Co., Ltd.</div>
+  </footer>
+   <style>
+    .site-footer {
+      background: #181d2c;
+      color: #fff;
+      padding: 8px 0 0 0;
+      font-family: adobe-garamond-pro, source-han-serif-japanese, "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", 游明朝体, YuMincho, "Yu Mincho", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+      letter-spacing: 0.01em;
+    }
+    .footer2__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 32px;
+      border: none;
+      padding: 0 24px 0 24px;
+      min-height: 120px;
+      position: relative;
+    }
+    .footer2__col--left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 140px;
+      margin-right: 32px;
+      border-right: 1.5px solid #3a4157;
+      padding-right: 36px;
+    }
+    .footer2__logo-img {
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      background: #fff;
+      object-fit: contain;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 8px rgba(60,80,80,0.10);
+    }
+    .footer2__logo-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+      margin-top: 2px;
+    }
+    .footer2__col--right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      min-width: 260px;
+      margin-top: 8px;
+    }
+    .footer2__menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 38px;
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0 0;
+    }
+    .footer2__menu li a {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 200;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+      padding-bottom: 2px;
+    }
+    .footer2__menu li a:hover {
+      color: #7ca18a;
+      text-decoration: underline;
+    }
+    .footer2__contact {
+      font-size: 1rem;
+      color: #e0e0e0;
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .footer2__contact a {
+      color: #e0e0e0;
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+    .footer2__contact a:hover {
+      color: #7ca18a;
+    }
+    .footer2__copyright {
+      width: 100%;
+      text-align: right;
+      color: #bfcfc0;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      padding-bottom: 3px;
+    }
+    @media (max-width: 900px) {
+      .footer2__container {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        padding: 0 8px;
+      }
+      .footer2__col--left {
+        border-right: none;
+        border-bottom: 1.5px solid #3a4157;
+        padding-right: 0;
+        padding-bottom: 18px;
+        margin-right: 0;
+        margin-bottom: 12px;
+      }
+      .footer2__col--right {
+        align-items: center;
+        margin-top: 0;
+      }
+      .footer2__menu {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+      .footer2__copyright {
+        text-align: center;
+        margin: 18px 0 0 0;
+      }
+    }
+  </style>
+
+  <script>
+    function showService(idx) {
+      document.querySelectorAll('.service-tab').forEach((tab, i) => {
+        tab.classList.toggle('active', i === idx);
+      });
+      document.querySelectorAll('.service-content').forEach((content, i) => {
+        content.classList.toggle('active', i === idx);
+      });
+    }
+    function showSubServiceSection(idx) {
+      document.querySelectorAll('.subservice-section').forEach((section, i) => {
+        section.classList.toggle('active', i === idx);
+      });
+    }
+    const tabGrids = [
+      // CAD tab: group both .works-list__grid--cad và .cad-info-box chỉ trong CAD
+      [
+        ...document.querySelectorAll('.works-list__grid--cad'),
+        ...document.querySelectorAll('.works-list__grid--cad .cad-info-box')
+      ],
+      [
+        ...document.querySelectorAll('.works-list__grid--bim'),
+        ...document.querySelectorAll('.works-list__grid--bim .cad-info-box')
+      ],
+      [
+        ...document.querySelectorAll('.works-list__grid--cg'),
+        ...document.querySelectorAll('.works-list__grid--cg .cad-info-box')
+      ],
+      [document.querySelector('.works-list__accordion--jisseki')],
+    ];
+    document.querySelectorAll('.works-tab').forEach((tab, idx) => {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.works-tab').forEach(t => t.classList.remove('works-tab--active'));
+        tab.classList.add('works-tab--active');
+        tabGrids.forEach((gridGroup, i) => {
+          if (!gridGroup) return;
+          gridGroup.forEach(grid => {
+            if (!grid) return;
+            if (i === idx) {
+              // Nếu là info-box thì hiển thị block, còn lại flex
+              if (grid.classList && grid.classList.contains('cad-info-box')) {
+                grid.style.display = 'block';
+              } else if (grid.classList && (grid.classList.contains('works-list__accordion--edu') || grid.classList.contains('works-list__accordion--jisseki'))) {
+                grid.style.display = 'block';
+              } else {
+                grid.style.display = 'flex';
+              }
+            } else {
+              grid.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+
+    // Accordion logic for 教育 tab
+    document.querySelectorAll('.works-list__accordion--edu .accordion-header').forEach((header, idx, arr) => {
+      header.addEventListener('click', function() {
+        arr.forEach((h, i) => {
+          const icon = h.querySelector('.accordion-icon');
+          const content = h.parentElement.querySelector('.accordion-content');
+          if (h === header) {
+            const isActive = h.classList.contains('active');
+            h.classList.toggle('active', !isActive);
+            content.classList.toggle('active', !isActive);
+            icon.textContent = !isActive ? '−' : '+';
+          } else {
+            h.classList.remove('active');
+            h.parentElement.querySelector('.accordion-content').classList.remove('active');
+            h.querySelector('.accordion-icon').textContent = '+';
+          }
+        });
+      });
+    });
+
+    // Accordion logic for 実績一覧 tab
+    document.querySelectorAll('.works-list__accordion--jisseki .accordion-header').forEach((header, idx, arr) => {
+      header.addEventListener('click', function() {
+        arr.forEach((h, i) => {
+          const icon = h.querySelector('.accordion-icon');
+          const content = h.parentElement.querySelector('.accordion-content');
+          if (h === header) {
+            const isActive = h.classList.contains('active');
+            h.classList.toggle('active', !isActive);
+            content.classList.toggle('active', !isActive);
+            icon.textContent = !isActive ? '−' : '+';
+          } else {
+            h.classList.remove('active');
+            h.parentElement.querySelector('.accordion-content').classList.remove('active');
+            h.querySelector('.accordion-icon').textContent = '+';
+          }
+        });
+      });
+    });
+  </script>
+  <script>
+    // Header theme switch: khi header chạm works-intro thì menu đen (solid-theme), còn lại menu trắng (hero-theme)
+    (function() {
+      const header = document.querySelector('.site-header');
+      const work = document.querySelector('.works-intro');
+      function updateHeaderTheme() {
+        if (!header || !work) return;
+        const workRect = work.getBoundingClientRect();
+        // Nếu top của works-intro <= chiều cao header => header chạm works-intro
+        if (workRect.top <= header.offsetHeight) {
+          header.classList.remove('hero-theme');
+          header.classList.add('solid-theme');
+        } else {
+          header.classList.add('hero-theme');
+          header.classList.remove('solid-theme');
+        }
+      }
+      window.addEventListener('scroll', updateHeaderTheme);
+      window.addEventListener('resize', updateHeaderTheme);
+      document.addEventListener('DOMContentLoaded', updateHeaderTheme);
+    })();
+
+  </script>
+</body>
+</html>

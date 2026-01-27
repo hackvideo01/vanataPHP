@@ -1,0 +1,751 @@
+<!--
+  VANATA Co.,Ltd - Cost Page
+  Author: Nguyễn Lực
+  Created: January 28, 2026
+  © 2026 VANATA Co.,Ltd
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="author" content="Nguyễn Lực">
+  <meta name="copyright" content="© 2026 VANATA Co.,Ltd">
+  <title>コスト | VANATA</title>
+  <!-- Font: Noto Sans JP, Inter fallback -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css?v=1.1">
+  <link rel="icon" href="./assets/imgs/logo/vanata_logo.png">
+  
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" role="banner">
+    <div class="branding">
+      <a class="logo" href="./" aria-label="VANATA homepage">
+        <img class="logo__img" src="./assets/imgs/logo/vanata_logo.png" alt="VANATA logo" />
+      </a>
+    </div>
+    <div class="nav-wrap">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Open menu">☰</button>
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li><a href="./?cate=company">Company</a></li>
+          <li><a href="./?cate=works">Works</a></li>
+          <li><a href="./?cate=training">Training</a></li>
+          <li><a href="./?cate=cost">Cost</a></li>
+          <li><a href="./?cate=contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <style>
+    html, body {
+      background: var(--bg-main);
+      color: var(--color-body);
+      font-family: adobe-garamond-pro, source-han-serif-japanese, "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", 游明朝体, YuMincho, "Yu Mincho", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+    /* ===== BANNER ===== */
+    .banner {
+      width: 100%;
+      min-height: var(--banner-height);
+      background: #222;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      overflow: hidden;
+      height: 12rem;
+    }
+    @media (min-width: 1024px) {
+      .banner { min-height: var(--banner-height-lg); height: 12rem;}
+    }
+    .banner-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 1;
+    }
+    .banner-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(90deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 100%);
+    }
+    .banner-content {
+      position: relative;
+      z-index: 3;
+      padding: 0 var(--container-pad) 32px var(--container-pad);
+      max-width: var(--max-width);
+      width: 100%;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 1rem;
+    }
+    .banner-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 0px;
+      color: #fff;
+      line-height: 1.18;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    }
+    .banner-breadcrumb {
+      font-size: 1rem;
+      color: #e6e8ee;
+      opacity: 0.85;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      padding-bottom: 1rem;
+    }
+    @media (max-width: 700px) {
+      .banner-content { padding: 0 12px 18px 12px; }
+      .banner-title { font-size: 1.6rem; }
+    }
+  </style>
+  <!-- ===== BANNER ===== -->
+  <section class="banner" aria-label="Cost Banner">
+    <img src="./assets/imgs/cost/vanata_cost_banner.png" alt="Vanata Cost Banner" class="banner-bg" />
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+      <h1 class="banner-title">コスト</h1>
+      <nav class="banner-breadcrumb" aria-label="Breadcrumb">Cost</nav>
+    </div>
+  </section>
+
+  <!-- ===== COST CONTENT ===== -->
+   <section class="cost">
+    <div class="cost__container">
+
+      <!-- Title -->
+      <header class="cost__head">
+        <h2 class="secTitle price">参考単価例</h2>
+        <p class="secLead">
+          当社では、作業内容・図面種類・プロジェクト規模に応じて個別にお見積りを行っております。<br>
+          下記は参考単価の一例です。<br>
+          正式なお見積りは無料でご提供いたします。
+        </p>
+      </header>
+
+      <!-- Price Table -->
+      <div class="cost__tableWrap">
+        <table class="costTable" aria-label="参考単価表">
+          <thead>
+            <tr>
+              <th style="width: 8rem;">依頼内容</th>
+              <th style="width: 9rem;">時間単価（税別）</th>
+              <th style="width: 9rem;">数量単価（税別）</th>
+              <th>備考</th>
+              <th>対応ソフト</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td><b>CAD図面作成</b></td>
+              <td>2500円/時間~</td>
+              <td>7千円 ~ /枚</td>
+              <td>簡単なトレースの場合は2000円/時間</td>
+              <td>PDF・AutoCAD / BIM(Revit)</td>
+            </tr>
+
+            <!-- <tr>
+              <td>意匠図・実施図</td>
+              <td class="muted">—</td>
+              <td>7千円 ~ /枚</td>
+              <td class="muted">—</td>
+              <td class="muted">—</td>
+            </tr> -->
+
+            <!-- <tr>
+              <td>施工図</td>
+              <td class="muted">—</td>
+              <td>9千円 ~ /枚</td>
+              <td>物件規模による要相談</td>
+              <td class="muted">—</td>
+            </tr> -->
+
+            <tr>
+              <td><b>3Dモデリング</b></td>
+              <td>2800円/時間~</td>
+              <td></td>
+              <td>簡単に納まり・干渉チェックの場合は2000円/時間</td>
+              <td>BIM(Revit・Rebro) / AutoCAD / Rhino・Grasshopper / SketchUp</td>
+            </tr>
+
+            <!-- <tr>
+              <td>小規模</td>
+              <td class="muted">—</td>
+              <td class="muted"></td>
+              <td class="muted">—</td>
+              <td class="muted">—</td>
+            </tr> -->
+
+            <!-- <tr>
+              <td><b>中・大規模</b></td>
+              <td class="muted">—</td>
+              <td></td>
+              <td>物件規模・詳細度レベルによる要相談</td>
+              <td class="muted">—</td>
+            </tr> -->
+
+            <tr>
+              <td>CGパース作成</td>
+              <td>2800円/時間~</td>
+              <td>3万円 ~ /ビュー</td>
+              <td></td>
+              <td>BIM(Revit・Rebro) / Rhino-Grashoopper / SkechUp</td>
+            </tr>
+
+            <!-- <tr>
+              <td><b>小規模</b></td>
+              <td>—</td>
+              <td>3万円 ~ /ビュー</td>
+              <td></td>
+              <td class="muted">—</td>
+            </tr> -->
+
+            <!-- <tr>
+              <td><b>中・大規模</b></td>
+              <td>—</td>
+              <td>5万円 ~ /ビュー</td>
+              <td>物件規模による要相談</td>
+              <td class="muted">—</td>
+            </tr> -->
+
+            <tr>
+              <td><b>VR動画作成</b></td>
+              <td></td>
+              <td></td>
+              <td>物件規模による要相談</td>
+              <td class="muted"></td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <td colspan="5" style="border: none;background: linear-gradient(135deg, rgba(32, 55, 98, .12), rgba(255, 255, 255, .9));">
+                ※案件内容・図面難易度・作図標準により単価は変動します。
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+    <section class="cost__block">
+
+    <!-- 見積依頼の流れ -->
+    <div class="cost__section">
+      <h2 class="cost__title estimate"> 見積依頼の流れ</h2>
+      <div class="cost__divider"></div>
+
+      <div class="costFlow">
+        <div class="costStep">
+          <span class="costNo">01</span>
+          <span class="costLabel">問合せ</span>
+          <small class="costSub">図面・使用資料のご送付</small>
+        </div>
+
+        <span class="costArrow" aria-hidden="true">▶</span>
+
+        <div class="costStep">
+          <span class="costNo">02</span>
+          <span class="costLabel">内容確認</span>
+          <small class="costSub">メール・電話・打合せ</small>
+        </div>
+
+        <span class="costArrow" aria-hidden="true">▶</span>
+
+        <div class="costStep">
+          <span class="costNo">03</span>
+          <span class="costLabel">お見積提出</span>
+          <small class="costSub">通常 1~2営業日</small>
+        </div>
+
+        <span class="costArrow" aria-hidden="true">▶</span>
+
+        <div class="costStep">
+          <span class="costNo">04</span>
+          <span class="costLabel">ご発注</span>
+          <small class="costSub">迅速な対応</small>
+        </div>
+
+        <span class="costArrow" aria-hidden="true">▶</span>
+
+        <div class="costStep">
+          <span class="costNo">05</span>
+          <span class="costLabel">作業開始</span>
+          <small class="costSub">常駐対応可能</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- 必要資料チェックリスト -->
+    <div class="cost__section">
+      <h3 class="cost__title checkList">必要資料チェックリスト</h3>
+      <div class="cost__divider"></div>
+
+      <ul class="costChecklist">
+        <li>元図（PDF / DWG / RVT / IFC 等）</li>
+        <li>作図標準・テンプレート</li>
+        <li>規模・詳細度レベル</li>
+        <li>希望納期</li>
+        <li>修正回数目安</li>
+      </ul>
+    </div>
+
+    <!-- CTA -->
+    <section class="training__cta">
+      <div class="ctaBox">
+        <div>
+          <h2>無料見積り受付中</h2>
+          <p>お気軽にお問い合わせください。</p>
+        </div>
+        <a class="ctaBtn" href="./?cate=contact">お問い合わせ</a>
+      </div>
+    </section>
+
+  </section>
+
+
+
+    </div>
+  </section>
+  <style>
+      :root{
+    --brand:#203762;
+    --brand2:#2F4B86;
+    --bg:#F6F8FC;
+    --card:#fff;
+    --border:#E6ECF5;
+    --text:#0F172A;
+    --muted:#64748B;
+      }
+
+      .cost{ background: var(--bg); padding: 28px 0 70px; color: var(--text); }
+      .cost__container{ max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+      .secTitle{
+      font-size: 30px;
+      margin: 0 0 10px;
+      color: var(--brand);
+      position: relative;
+      padding-bottom: 12px;
+      }
+      .price::after{
+      content:"";
+      display:block;
+      width: 166px;
+      height: 5px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--brand), rgba(32,55,98,.18));
+      }
+
+      .estimate::after{
+      content:"";
+      display:block;
+      width: 218px;
+      height: 5px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--brand), rgba(32,55,98,.18));
+      }
+
+      .checkList::after{
+      content:"";
+      display:block;
+      width: 335px;
+      height: 5px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--brand), rgba(32,55,98,.18));
+      }
+      .secLead{ margin: 0; color: var(--muted); line-height: 1.75; }
+
+      .cost__tableWrap{
+      margin-top: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(15,23,42,.08);
+      }
+
+      /* Table */
+      .costTable{
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      }
+      .costTable thead th{
+      background: rgba(32,55,98,.08);
+      color: var(--brand);
+      text-align: center;
+      padding: 14px 14px;
+      border-bottom: 1px solid var(--border);
+      font-weight: 800;
+      border: 1px solid #9aafd7;
+      }
+      .costTable td{
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      border: 1px solid #9aafd7;
+      }
+      .costTable tbody tr:hover td{
+      background: rgba(32,55,98,.03);
+      }
+      .costTable td.muted{ color: var(--muted); }
+      .costTable tfoot td{
+      padding: 12px 14px;
+      color: var(--muted);
+      background: #fbfcff;
+      border-bottom: 0;
+      }
+
+      .qNo{
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--brand);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 12px;
+      }
+
+      /* Responsive */
+      @media (max-width: 980px){
+      .costTable{ font-size: 13px; }
+      }
+
+      
+  </style>
+  <style>
+    :root{
+      --brand:#203762;
+      --brand2:#2d4a86;
+      --text:#101828;
+      --muted:#667085;
+      --border:#e6eaf2;
+    }
+
+    .cost__block{
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px 0px 46px;
+    }
+
+    /* section title + underline like 参考単価例 */
+    .cost__section{ margin-bottom: 22px; }
+    .cost__title{
+      font-size: 30px;
+      margin: 0 0 20px;
+      color: var(--brand);
+      position: relative;
+    }
+
+    /* FLOW */
+    .costFlow{
+      display:flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 12px;
+    }
+
+    .costStep{
+      flex: 1 1 159px;
+      min-width: 159px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 14px;
+      box-shadow: 0 10px 24px rgba(16,24,40,.08);
+    }
+
+    .costNo{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: rgba(32,55,98,.10);
+      color: var(--brand);
+      font-weight: 900;
+      margin-right: 10px;
+    }
+
+    .costLabel{
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: .01em;
+    }
+
+    .costSub{
+      display:block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.3;
+    }
+
+    .costArrow{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width: 19px;
+      color: rgba(32,55,98,.85);
+      font-weight: 900;
+      transform: translateY(2px);
+      user-select:none;
+    }
+
+    /* CHECKLIST */
+    .costChecklist{
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.9;
+    }
+    .costChecklist li{
+      color: var(--text);
+    }
+
+    /* CTA (giữ nguyên code bạn đưa) */
+    .training__cta{ margin-top: 18px; }
+    .ctaBox{
+      background: linear-gradient(135deg, rgba(32,55,98,.12), rgba(255,255,255,.9));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .ctaBox h2{ margin: 0 0 6px; color: var(--brand); }
+    .ctaBox p{ margin: 0; color: var(--muted); }
+
+    .ctaBtn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: var(--brand);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 12px 26px rgba(32,55,98,.22);
+      white-space: nowrap;
+    }
+    .ctaBtn:hover{ background: var(--brand2); }
+
+    /* Responsive */
+    @media (max-width: 760px){
+      .costArrow{ display:none; }
+      .costStep{ flex: 1 1 100%; }
+      .cost__divider{ width: 200px; }
+      .ctaBox{ flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="footer">
+    <div class="footer2__container">
+      <div class="footer2__col footer2__col--left">
+        <img class="footer2__logo-img" src="./assets/imgs/logo/vanata_logo.png" alt="VANATA logo" />
+        <div class="footer2__logo-text">VANATA</div>
+      </div>
+      <div class="footer2__col footer2__col--right">
+        <ul class="footer2__menu">
+          <li><a href="./">Home</a></li>
+          <li><a href="./?cate=company">Company</a></li>
+          <li><a href="./?cate=works">Works</a></li>
+          <li><a href="./?cate=training">Training</a></li>
+          <li><a href="./?cate=cost">Cost</a></li>
+          <li><a href="./?cate=contact">Contact</a></li>
+        </ul>
+        <div class="footer2__contact">
+          <div>〒559-0013 住之江区御崎5-8-20</div>
+          <div>+81-80-4645-2010</div>
+          <div><a href="mailto:vnthuan001@vanata.co.jp">vnthuan001@vanata.co.jp</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer2__copyright">© 2026 VANATA Co., Ltd.</div>
+  </footer>
+   <style>
+    .site-footer {
+      background: #181d2c;
+      color: #fff;
+      padding: 8px 0 0 0;
+      font-family: adobe-garamond-pro, source-han-serif-japanese, "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", 游明朝体, YuMincho, "Yu Mincho", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+      letter-spacing: 0.01em;
+    }
+    .footer2__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 32px;
+      border: none;
+      padding: 0 24px 0 24px;
+      min-height: 120px;
+      position: relative;
+    }
+    .footer2__col--left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 140px;
+      margin-right: 32px;
+      border-right: 1.5px solid #3a4157;
+      padding-right: 36px;
+    }
+    .footer2__logo-img {
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      background: #fff;
+      object-fit: contain;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 8px rgba(60,80,80,0.10);
+    }
+    .footer2__logo-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+      margin-top: 2px;
+    }
+    .footer2__col--right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      min-width: 260px;
+      margin-top: 8px;
+    }
+    .footer2__menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 38px;
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0 0;
+    }
+    .footer2__menu li a {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 200;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+      padding-bottom: 2px;
+    }
+    .footer2__menu li a:hover {
+      color: #7ca18a;
+      text-decoration: underline;
+    }
+    .footer2__contact {
+      font-size: 1rem;
+      color: #e0e0e0;
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .footer2__contact a {
+      color: #e0e0e0;
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+    .footer2__contact a:hover {
+      color: #7ca18a;
+    }
+    .footer2__copyright {
+      width: 100%;
+      text-align: right;
+      color: #bfcfc0;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      padding-bottom: 3px;
+    }
+    @media (max-width: 900px) {
+      .footer2__container {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        padding: 0 8px;
+      }
+      .footer2__col--left {
+        border-right: none;
+        border-bottom: 1.5px solid #3a4157;
+        padding-right: 0;
+        padding-bottom: 18px;
+        margin-right: 0;
+        margin-bottom: 12px;
+      }
+      .footer2__col--right {
+        align-items: center;
+        margin-top: 0;
+      }
+      .footer2__menu {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+      .footer2__copyright {
+        text-align: center;
+        margin: 18px 0 0 0;
+      }
+    }
+  </style>
+
+  <script>
+    // Header theme switch: khi header chạm cost thì menu đen (solid-theme), còn lại menu trắng (hero-theme)
+    (function() {
+      const header = document.querySelector('.site-header');
+      const cost = document.querySelector('.cost');
+      function updateHeaderTheme() {
+        if (!header || !cost) return;
+        const costRect = cost.getBoundingClientRect();
+        // Nếu top của cost <= chiều cao header => header chạm cost
+        if (costRect.top <= header.offsetHeight) {
+          header.classList.remove('hero-theme');
+          header.classList.add('solid-theme');
+        } else {
+          header.classList.add('hero-theme');
+          header.classList.remove('solid-theme');
+        }
+      }
+      window.addEventListener('scroll', updateHeaderTheme);
+      window.addEventListener('resize', updateHeaderTheme);
+      document.addEventListener('DOMContentLoaded', updateHeaderTheme);
+    })();
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,577 @@
+<!--
+  VANATA Co.,Ltd - Contact Page
+  Author: Nguyễn Lực
+  Created: January 28, 2026
+  © 2026 VANATA Co.,Ltd
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="author" content="Nguyễn Lực">
+  <meta name="copyright" content="© 2026 VANATA Co.,Ltd">
+  <title>Contact | VANATA</title>
+  <link rel="stylesheet" href="./assets/css/styles.css?v=1.1">
+  <link rel="icon" href="./assets/imgs/logo/vanata_logo.png">
+  <style>
+    .main-nav a {
+      color: #ffffff;
+    }
+    :root{
+      --bg:#eef2f7;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e5e7eb;
+      --navy:#1f2a44;
+      --navy2:#2b3a63;
+      --focus:#93c5fd;
+      --req:#f59e0b;
+      --opt:#9ca3af;
+      --shadow: 0 18px 40px rgba(15, 23, 42, .10);
+      --radius: 18px;
+    }
+    *{ box-sizing:border-box; }
+    body{ margin:0; font-family: adobe-garamond-pro, source-han-serif-japanese, "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", 游明朝体, YuMincho, "Yu Mincho", "ＭＳ Ｐ明朝", "MS PMincho", serif; color:var(--text); }
+    .contact-page{
+      background: var(--bg);
+      padding: 20px 20px 80px;
+    }
+    .contact-wrap{
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    .contact-head{
+      text-align:center;
+      margin-bottom: 22px;
+    }
+    .contact-title{
+      margin:0;
+      letter-spacing: .08em;
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .contact-lead{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .contact-card{
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      border: 1px solid rgba(15, 23, 42, .06);
+    }
+    .form-row{
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 16px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+    .form-row:first-child{ border-top: 0; }
+    .form-row.full{ grid-template-columns: 220px 1fr; }
+    .label-col{
+      display:flex;
+      align-items:flex-start;
+      gap: 10px;
+      padding-top: 6px;
+    }
+    .label{
+      font-weight: 650;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+    .req-badge, .opt-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      height: 22px;
+      min-width: 44px;
+      padding: 0 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      color: #fff;
+    }
+    .req-badge{ background: var(--req); }
+    .opt-badge{ background: var(--opt); }
+    .field-col{ min-width:0; }
+    .input, .textarea{
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 14px;
+      color: var(--text);
+      outline: none;
+      transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .textarea{ padding: 14px; resize: vertical; min-height: 180px; }
+    .input:focus, .textarea:focus{
+      border-color: var(--focus);
+      box-shadow: 0 0 0 4px rgba(147, 197, 253, .35);
+      background: #ffffff;
+    }
+    .hint{
+      margin: 8px 0 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .chip-group{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+    }
+    .chip{
+      position: relative;
+      display:inline-flex;
+      align-items:center;
+      cursor:pointer;
+    }
+    .chip input{
+      position:absolute;
+      inset:0;
+      opacity:0;
+      pointer-events:none;
+    }
+    .chip span{
+      display:inline-flex;
+      align-items:center;
+      height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #f8fafc;
+      color: var(--text);
+      font-size: 14px;
+      transition: background .15s ease, border-color .15s ease, color .15s ease, box-shadow .15s ease;
+    }
+    .chip input:checked + span{
+      background: rgba(31, 42, 68, .08);
+      border-color: rgba(31, 42, 68, .35);
+      color: var(--navy);
+      box-shadow: 0 0 0 4px rgba(31, 42, 68, .08);
+    }
+    .agree{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .agree input{ width: 16px; height: 16px; }
+    .actions{
+      display:flex;
+      justify-content:center;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      margin-top: 10px;
+    }
+    .btn{
+      border: none;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: .04em;
+      padding: 12px 22px;
+      border-radius: 12px;
+      cursor:pointer;
+      box-shadow: 0 10px 24px rgba(31, 42, 68, .22);
+      transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+    }
+    .btn:hover{
+      background: var(--navy2);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(31, 42, 68, .26);
+    }
+    .btn:active{ transform: translateY(0px); }
+    @media (max-width: 860px){
+      .contact-card{ padding: 18px; }
+      .form-row{ grid-template-columns: 1fr; }
+      .label-col{ padding-top: 0; }
+    }
+  </style>
+</head>
+<body>
+    <!-- Banner giống Vision -->
+    <section class="banner" aria-label="Contact Banner">
+      <img src="./assets/imgs/contact/contact_banner.png" alt="Contact banner" class="banner-bg" />
+      <div class="banner-overlay"></div>
+      <div class="banner-content">
+        <!-- <h1 class="banner-title">CONTACT</h1> -->
+        <!-- <nav class="banner-breadcrumb" aria-label="Breadcrumb">Contact</nav> -->
+      </div>
+    </section>
+    <style>
+      .banner {
+        width: 100%;
+        min-height: 220px;
+        background: #222;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        overflow: hidden;
+      }
+      @media (min-width: 1024px) {
+        .banner { min-height: 160px; }
+      }
+      .banner-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 182%;
+        object-fit: cover;
+        object-position: center;
+        z-index: 1;
+      }
+      .banner-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        background: linear-gradient(90deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 100%);
+      }
+      .banner-content {
+        position: relative;
+        z-index: 3;
+        padding: 0 24px 32px 24px;
+        max-width: 1120px;
+        width: 100%;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .banner-title {
+        font-size: 2.4rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        margin-bottom: 8px;
+        color: #fff;
+        line-height: 1.18;
+        text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+      }
+      .banner-breadcrumb {
+        font-size: 1rem;
+        color: #e6e8ee;
+        opacity: 0.85;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+      }
+      @media (max-width: 700px) {
+        .banner-content { padding: 0 12px 18px 12px; }
+        .banner-title { font-size: 1.6rem; }
+      }
+    </style>
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" role="banner">
+    <div class="branding">
+      <a class="logo" href="./" aria-label="VANATA homepage">
+        <img class="logo__img" src="./assets/imgs/logo/vanata_logo.png" alt="VANATA logo" />
+      </a>
+    </div>
+    <div class="nav-wrap">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Open menu">☰</button>
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li><a href="./?cate=company">Company</a></li>
+          <li><a href="./?cate=works">Works</a></li>
+          <li><a href="./?cate=training">Training</a></li>
+          <li><a href="./?cate=cost">Cost</a></li>
+          <li><a href="./?cate=contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="contact-page">
+    <div class="contact-wrap">
+      <header class="contact-head">
+        <h1 class="contact-title">CONTACT</h1>
+        <p class="contact-lead">当社ホームページへのお問い合わせありがとうございます。</p>
+      </header>
+      <form class="contact-card" action="./?cate=contact" method="post">
+        <!-- row: type -->
+        <div class="form-row full">
+          <div class="label-col">
+            <span class="req-badge">必須</span>
+            <label class="label" for="inquiryType">ご相談内容</label>
+          </div>
+          <div class="field-col">
+            <div class="chip-group" id="inquiryType" role="group" aria-label="ご相談内容">
+              <label class="chip">
+                <input type="radio" name="type" value="ご相談" checked />
+                <span>ご相談</span>
+              </label>
+              <label class="chip">
+                <input type="radio" name="type" value="お見積もり" />
+                <span>お見積もり</span>
+              </label>
+              <label class="chip">
+                <input type="radio" name="type" value="お問い合わせ" />
+                <span>お問い合わせ</span>
+              </label>
+              <label class="chip">
+                <input type="radio" name="type" value="その他" />
+                <span>その他</span>
+              </label>
+            </div>
+            <p class="hint">※ 選択して内容をご入力ください。</p>
+          </div>
+        </div>
+        <!-- row: name -->
+        <div class="form-row">
+          <div class="label-col">
+            <span class="req-badge">必須</span>
+            <label class="label" for="name">お名前</label>
+          </div>
+          <div class="field-col">
+            <input class="input" id="name" name="name" type="text" placeholder="例：あなたのお名前" required />
+          </div>
+        </div>
+        <!-- row: email -->
+        <div class="form-row">
+          <div class="label-col">
+            <span class="req-badge">必須</span>
+            <label class="label" for="email">メールアドレス</label>
+          </div>
+          <div class="field-col">
+            <input class="input" id="email" name="email" type="email" placeholder="例：xxx@xxx.com" required />
+          </div>
+        </div>
+        <!-- row: company (optional) -->
+        <div class="form-row">
+          <div class="label-col">
+            <span class="opt-badge">任意</span>
+            <label class="label" for="company">会社名</label>
+          </div>
+          <div class="field-col">
+            <input class="input" id="company" name="company" type="text" placeholder="例：○○株式会社" />
+          </div>
+        </div>
+        <!-- row: tel -->
+        <div class="form-row">
+          <div class="label-col">
+            <span class="opt-badge">任意</span>
+            <label class="label" for="tel">お電話番号</label>
+          </div>
+          <div class="field-col">
+            <input class="input" id="tel" name="tel" type="tel" inputmode="tel" placeholder="例：03-1234-5678" />
+          </div>
+        </div>
+        <!-- row: message -->
+        <div class="form-row full">
+          <div class="label-col">
+            <span class="opt-badge">任意</span>
+            <label class="label" for="message">メッセージ本文</label>
+          </div>
+          <div class="field-col">
+            <textarea class="textarea" id="message" name="message" rows="8" placeholder="お問い合わせ内容をご記入ください"></textarea>
+            <label class="agree">
+              <input type="checkbox" required />
+              <span>送信内容を確認しました</span>
+            </label>
+          </div>
+        </div>
+        <!-- actions -->
+        <div class="actions">
+          <button class="btn" type="submit">確認画面へ</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="footer">
+    <div class="footer2__container">
+      <div class="footer2__col footer2__col--left">
+        <img class="footer2__logo-img" src="./assets/imgs/logo/vanata_logo.png" alt="VANATA logo" />
+        <div class="footer2__logo-text">VANATA</div>
+      </div>
+      <div class="footer2__col footer2__col--right">
+        <ul class="footer2__menu">
+          <li><a href="./">Home</a></li>
+          <li><a href="./?cate=company">Company</a></li>
+          <li><a href="./?cate=works">Works</a></li>
+          <li><a href="./?cate=training">Training</a></li>
+          <li><a href="./?cate=cost">Cost</a></li>
+          <li><a href="./?cate=contact">Contact</a></li>
+        </ul>
+        <div class="footer2__contact">
+          <div>〒559-0013 住之江区御崎5-8-20</div>
+          <div>+81-80-4645-2010</div>
+          <div><a href="mailto:vnthuan001@vanata.co.jp">vnthuan001@vanata.co.jp</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer2__copyright">© 2026 VANATA Co., Ltd.</div>
+  </footer>
+   <style>
+    .site-footer {
+      background: #181d2c;
+      color: #fff;
+      padding: 8px 0 0 0;
+      font-family: adobe-garamond-pro, source-han-serif-japanese, "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", 游明朝体, YuMincho, "Yu Mincho", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+      letter-spacing: 0.01em;
+    }
+    .footer2__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 32px;
+      border: none;
+      padding: 0 24px 0 24px;
+      min-height: 120px;
+      position: relative;
+    }
+    .footer2__col--left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 140px;
+      margin-right: 32px;
+      border-right: 1.5px solid #3a4157;
+      padding-right: 36px;
+    }
+    .footer2__logo-img {
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      background: #fff;
+      object-fit: contain;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 8px rgba(60,80,80,0.10);
+    }
+    .footer2__logo-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+      margin-top: 2px;
+    }
+    .footer2__col--right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      min-width: 260px;
+      margin-top: 8px;
+    }
+    .footer2__menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 38px;
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0 0;
+    }
+    .footer2__menu li a {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 200;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+      padding-bottom: 2px;
+    }
+    .footer2__menu li a:hover {
+      color: #7ca18a;
+      text-decoration: underline;
+    }
+    .footer2__contact {
+      font-size: 1rem;
+      color: #e0e0e0;
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .footer2__contact a {
+      color: #e0e0e0;
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+    .footer2__contact a:hover {
+      color: #7ca18a;
+    }
+    .footer2__copyright {
+      width: 100%;
+      text-align: right;
+      color: #bfcfc0;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      padding-bottom: 3px;
+    }
+    @media (max-width: 900px) {
+      .footer2__container {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        padding: 0 8px;
+      }
+      .footer2__col--left {
+        border-right: none;
+        border-bottom: 1.5px solid #3a4157;
+        padding-right: 0;
+        padding-bottom: 18px;
+        margin-right: 0;
+        margin-bottom: 12px;
+      }
+      .footer2__col--right {
+        align-items: center;
+        margin-top: 0;
+      }
+      .footer2__menu {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+      .footer2__copyright {
+        text-align: center;
+        margin: 18px 0 0 0;
+      }
+    }
+  </style>
+
+  <script>
+    // Header theme switch: khi header chạm contact-page thì menu đen (solid-theme), còn lại menu trắng (hero-theme)
+    (function() {
+      const header = document.querySelector('.site-header');
+      const contact = document.querySelector('.contact-page');
+      function updateHeaderTheme() {
+        if (!header || !contact) return;
+        const contactRect = contact.getBoundingClientRect();
+        // Nếu top của contact-page <= chiều cao header => header chạm contact-page
+        if (contactRect.top <= header.offsetHeight) {
+          header.classList.remove('hero-theme');
+          header.classList.add('solid-theme');
+        } else {
+          header.classList.add('hero-theme');
+          header.classList.remove('solid-theme');
+        }
+      }
+      window.addEventListener('scroll', updateHeaderTheme);
+      window.addEventListener('resize', updateHeaderTheme);
+      document.addEventListener('DOMContentLoaded', updateHeaderTheme);
+    })();
+
+  </script>
+</body>
+</html>
