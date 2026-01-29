@@ -169,7 +169,7 @@
   left: 50%;
   transform: translateX(-50%);
   color: #fff;
-  font-size: clamp(50px, 2vw, 50px);
+  font-size: clamp(45px, 2vw, 45px);
   font-family: 'AI Bayan', serif;
   letter-spacing: 0.08em;
   text-align: center;
