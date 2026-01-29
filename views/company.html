@@ -14,7 +14,7 @@
   <title>会社概要 | VANATA</title>
   <!-- Font: Noto Sans JP, Inter fallback -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/styles.css?v=1.1">
+  <link rel="stylesheet" href="./assets/css/styles.css?v=1.5">
   <link rel="icon" href="./assets/imgs/logo/vanata_logo.png" type="image/x-icon">
   <style>
     .main-nav a {
@@ -1219,16 +1219,12 @@ content: "";
                   <dd>VANATA Co.,Ltd / ヴァナタ株式会社</dd>
                 </div>
                 <div class="row">
-                  <dt>従業員</dt>
-                  <dd>８名（日本：３名／ベトナム：５名）</dd>
-                </div>
-                <div class="row">
                   <dt>住所</dt>
                   <dd>
                     <div class="stack">
                       <span class="muted">本社</span>
                       <span>〒559-0013</span>
-                      <span>住之江区御崎５ー８ー２０</span>
+                      <span>大阪府大阪市住之江区御崎５ー８ー２０</span>
                     </div>
                   </dd>
                 </div>
@@ -1239,16 +1235,25 @@ content: "";
                       <li>CAD図面制作</li>
                       <li>BIMモデリング</li>
                       <li>CGパース制作</li>
+                      <li>人材育成・教育支援</li>
                     </ul>
                   </dd>
                 </div>
                 <div class="row">
-                  <dt>設立</dt>
-                  <dd>２０２１年</dd>
+                  <dt>沿革</dt>
+                  <dd>
+                    <ul class="list">
+                      <li>2020年 日本にてCAD・BIM制作チームを発足</li>
+                      <li>2021年 日本にてVANATA設立</li>
+                      <li>2024年 ベトナムにCAD・BIM制作拠点を開設し、制作体制を拡充</li>
+                      <li>2025年 ベトナム・フエ市にVANATA拠点を法人化し、本格運営を開始</li>
+                      <li>2026年 本社機能を大阪府大阪市住之江区御崎5-8-20へ移転</li>
+                    </ul>
+                  </dd>
                 </div>
                 <div class="row">
                   <dt>関連会社</dt>
-                  <dd>2025年 Vanata 有限会社 設立（ベトナム、フエ市）</dd>
+                  <dd>Vanata 有限会社（ベトナム、フエ市）</dd>
                 </div>
                 <div class="row">
                   <dt>役員紹介</dt>
@@ -1268,6 +1273,13 @@ content: "";
             </div>
           </article>
         </div>
+        
+        <!-- Contact Action - Tách riêng -->
+        <div class="overview-contact-action">
+          <a class="overview-contact-btn" href="./?cate=contact">お問い合わせ</a>
+          <p class="overview-contact-text">私たちに、お任せてみませんか？</p>
+        </div>
+      </div>
       </section>
       <style>
         :root{
@@ -1389,6 +1401,51 @@ content: "";
         transform: translateY(-1px);
         transition: box-shadow .25s ease, transform .25s ease;
       }
+      
+      /* CONTACT ACTION */
+      .overview-contact-action {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-top: 24px;
+        padding: 24px 23px;
+        background: #fff;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        max-width: 1120px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .overview-contact-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 28px;
+        background: #203762;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(32, 55, 98, 0.2);
+        transition: background 0.2s, box-shadow 0.2s;
+        letter-spacing: 0.05em;
+      }
+      .overview-contact-btn:hover {
+        background: #1a2d52;
+        box-shadow: 0 4px 20px rgba(32, 55, 98, 0.3);
+      }
+      .overview-contact-text {
+        margin: 0;
+        font-size: clamp(14px, 1.8vw, 18px);
+        color: #203762;
+        letter-spacing: 0.05em;
+        font-weight: 500;
+        opacity: 0.9;
+      }
+      
       /* RESPONSIVE */
       @media (max-width: 900px){
         /*.overview-grid{

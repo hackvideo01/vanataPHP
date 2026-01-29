@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
       <!-- Thêm font chữ cách điệu cho intro (chữ VANATA) -->
       <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="./assets/css/styles.css?v=1.1">
+      <link rel="stylesheet" href="./assets/css/styles.css?v=1.5">
       <title>VANATA</title>
     <link rel="icon" href="./assets/imgs/logo/vanata_logo.png">
   </head>
@@ -55,6 +55,8 @@
       <span class="letter">t</span>
       <span class="letter">a</span>
     </div>
+    <!-- Dòng chữ nhỏ bên dưới -->
+    <div class="intro__tagline" aria-hidden="true">共に考えるパートナーとして、私たちにお任せください。</div>
     <!-- Văn bản dành cho screen reader -->
     <span class="sr-only">Vanata</span>
   </div>
@@ -512,7 +514,7 @@
           </article>
           <article class="svcCard svcCard--jp" role="listitem">
             <div class="svcCard__icon"><img src="./assets/imgs/icons/study_icon.png" alt="教育"></div>
-            <h3 class="svcCard__name"><a href="works.html#edu" style="color:inherit;text-decoration:none;">教育</a></h3>
+            <h3 class="svcCard__name"><a href="works.html#edu" style="color:inherit;text-decoration:none;">人材育成・教育支援</a></h3>
             <div class="svcCard__line"></div>
             <div class="svcCard__desc">CAD、BIM、CGパース制作に関する教育プログラムを提供します。</div>
             <!-- <div class="svcCard__softs">
@@ -658,7 +660,10 @@
         <div class="related__box">
           <h3>Vanata 有限会社</h3>
           <p>20 Ha Noi Street, Phu Nhuan District, HUE City, Vietnam</p>
-          <a class="btn" href="./?cate=contact">お問い合わせ</a>
+          <div class="related__actions">
+            <a class="btn" href="./?cate=contact">お問い合わせ</a>
+            <p class="related__subtitle">私たちに、お任せてみませんか？</p>
+          </div>
         </div>
       </div>
     </section>
@@ -718,6 +723,25 @@
       background: linear-gradient(90deg,var(--brand),rgba(32,55,98,.2));
     }
 
+    /* SUBTITLE */
+    .related__subtitle{
+      margin: 0;
+      font-size: clamp(14px, 1.8vw, 20px);
+      color: #203762;
+      letter-spacing: 0.05em;
+      font-weight: 400;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    /* ACTIONS CONTAINER */
+    .related__actions{
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
     /* TEXT BOX */
     .related__box{
       padding: 18px;
@@ -736,7 +760,6 @@
     }
 
     .related__box p{
-      margin: 0 0 16px;
       line-height: 1.7;
       color: #475569;
     }
@@ -902,7 +925,7 @@
     </style>
   </main>
 
-    <script src="./assets/js/scripts.js?v=1.2"></script>
+    <script src="./assets/js/scripts.js?v=1.5"></script>
    <!-- Footer -->
   <footer class="site-footer" id="footer">
     <div class="footer2__container">

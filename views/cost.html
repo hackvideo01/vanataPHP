@@ -14,7 +14,7 @@
   <title>コスト | VANATA</title>
   <!-- Font: Noto Sans JP, Inter fallback -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/styles.css?v=1.1">
+  <link rel="stylesheet" href="./assets/css/styles.css?v=1.5">
   <link rel="icon" href="./assets/imgs/logo/vanata_logo.png">
   
 </head>
@@ -145,21 +145,17 @@
         <table class="costTable" aria-label="参考単価表">
           <thead>
             <tr>
-              <th style="width: 8rem;">依頼内容</th>
-              <th style="width: 9rem;">時間単価（税別）</th>
-              <th style="width: 9rem;">数量単価（税別）</th>
+              <th style="width: 15rem;">依頼内容</th>
+              <th style="width: 15rem;">参考単価（税別）</th>
               <th>備考</th>
-              <th>対応ソフト</th>
             </tr>
           </thead>
 
           <tbody>
             <tr>
               <td><b>CAD図面作成</b></td>
-              <td>2500円/時間~</td>
-              <td>7千円 ~ /枚</td>
-              <td>簡単なトレースの場合は2000円/時間</td>
-              <td>PDF・AutoCAD / BIM(Revit)</td>
+              <td>8,000円~/枚</td>
+              <td>簡単なトレース等の場合は3,000円~/枚</td>
             </tr>
 
             <!-- <tr>
@@ -180,10 +176,8 @@
 
             <tr>
               <td><b>3Dモデリング</b></td>
-              <td>2800円/時間~</td>
-              <td></td>
-              <td>簡単に納まり・干渉チェックの場合は2000円/時間</td>
-              <td>BIM(Revit・Rebro) / AutoCAD / Rhino・Grasshopper / SketchUp</td>
+              <td>800円~/m²</td>
+              <td>計画基本モデル等の場合は300円~/m²</td>
             </tr>
 
             <!-- <tr>
@@ -203,11 +197,9 @@
             </tr> -->
 
             <tr>
-              <td>CGパース作成</td>
-              <td>2800円/時間~</td>
-              <td>3万円 ~ /ビュー</td>
-              <td></td>
-              <td>BIM(Revit・Rebro) / Rhino-Grashoopper / SkechUp</td>
+              <td><b>施工図制作</b></td>
+              <td>15,000円~/案件</td>
+              <td>小規模案件最低ライン</td>
             </tr>
 
             <!-- <tr>
@@ -227,11 +219,15 @@
             </tr> -->
 
             <tr>
+              <td><b>CGパース作成</b></td>
+              <td>20,000円~/カット</td>
+              <td>計画ビューの場合は8,000円~/ビュー</td>
+            </tr>
+
+            <tr>
               <td><b>VR動画作成</b></td>
               <td></td>
-              <td></td>
               <td>物件規模による要相談</td>
-              <td class="muted"></td>
             </tr>
           </tbody>
 
@@ -390,7 +386,7 @@
       .costTable thead th{
       background: rgba(32,55,98,.08);
       color: var(--brand);
-      text-align: center;
+      text-align: left;
       padding: 14px 14px;
       border-bottom: 1px solid var(--border);
       font-weight: 800;

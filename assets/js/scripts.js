@@ -60,7 +60,7 @@ setTimeout(()=>{
     const dur = cs.animationDuration || '0s';
     const parseMs = (s) => { if(!s) return 0; const v = parseFloat(s); return s.indexOf('ms') > -1 ? v : v * 1000; };
     const total = parseMs(ad) + parseMs(dur);
-    const buffer = 2180; // đệm để chữ hiển thị ổn
+    const buffer = 8180; // đệm để chữ hiển thị ổn
     autoLeaveTimer = setTimeout(()=> leaveIntro(), total + buffer);
   }else{
     autoLeaveTimer = setTimeout(()=> leaveIntro(), 1600);
